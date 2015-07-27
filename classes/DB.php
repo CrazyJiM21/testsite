@@ -4,9 +4,9 @@ class DB {
 
     public function __construct()
     {
-        mysql_connect('localhost', 'root', '');
-        mysql_select_db('testsite');
-        mysql_query('SET NAMES utf8');
+        mysql_connect('localhost', 'root', '') or die(mysql_error());
+        mysql_select_db('testsite') or die(mysql_error());
+        mysql_query('SET NAMES utf8') or die(mysql_error());
     }
 
     public function queryAll($sql, $class = 'stdClass')
