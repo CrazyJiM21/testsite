@@ -4,15 +4,17 @@ class UsersController {
 
     public function actionAll()
     {
-        $items = Users::getAll();
-        include __DIR__ . '/../views/users/all.php';
-    }
+        $user = UsersModel::findOneByPK(2);
+        $user->nickname = 'Shrek';
+        $user->password = 'stonestone';
+        $user->about = 'I am the ugliest!';
+        //$user->update();
 
-    public function actionOne()
-    {
-        $id = $_GET['id'];
-        $item = Users::getOne($id);
-        include __DIR__ . '/../views/users/one.php';
+        $users = UsersModel::findAll();
+        foreach ($users as $user) {
+            echo $user . '<br>';
+        }
+
     }
 
 } 

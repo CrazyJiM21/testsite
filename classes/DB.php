@@ -12,9 +12,9 @@ class DB
         $this->execute('SET NAMES utf8');
     }
 
-    public function setClassName($classNmae)
+    public function setClassName($className)
     {
-        $this->className = $classNmae;
+        $this->className = $className;
     }
 
     public function query($sql, $params=[])
